@@ -10,8 +10,13 @@ exit 1
 fi
 while [ $# -gt 0 ]
 do
+if [ -f $1 ]
+then
 cp $1 $2
 echo "copies $1 to $2"
+else
+echo "file $1 doesnot exist"
+fi
 shift
 shift
 done
